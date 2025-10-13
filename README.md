@@ -57,10 +57,15 @@ The **first case** runs from **January 13th 2021, 12 UTC** to **January 16th 202
 ## 📊 Example Output from first case study
 
 ![Vertical Wind Cross Section (foehn)](First_casestudy/Wind_xsection/wind_xsection_024.png)
+- Vertical Wind Cross Section (foehn) on Jan 14th at 12Z
 ![Vertical Wind Cross Section (no foehn)](First_casestudy/Wind_xsection/wind_xsection_061.png)
+- Vertical Wind Cross Section (no foehn) on Jan 16th at 01Z
 ![Wind speed Vertical Profile](First_casestudy/Vertical_plot/kerman16th_windvert.png)
+- Wind speed Vertical Profile for Kermanshah on the 16th at 00Z
 ![Time plot of T2 and Td2](First_casestudy/timeplot_OIGG/temp2m.png)
+- Time plot of T2 and Td2 for the OIGG weather station
 ![Horizontal variation of RH2](First_casestudy/horizontal_rh2xsection/horizontal_rh2.000049.png)
+- Horizontal contour map illustrating the spatial distribution of 2 m relative humidity (RH2) over a 200 × 200 km domain.
 ---
 
 ## 🧩 Next Steps
