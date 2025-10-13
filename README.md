@@ -70,3 +70,13 @@ The **first case** runs from **January 13th 2021, 12 UTC** to **January 16th 202
 ---
 
 ## 📁 Repository Structure
+```
+├── data/ # Input and output data (excluded from Git)
+├── scripts/ # NCL and Python analysis scripts
+│ ├── vert_cross.ncl
+│ ├── wrf_topo2.ncl
+│ ├── profile_plot.py
+├── images/ # Figures and visualizations
+└── namelist.input # WRF configuration file
+ 
+```
