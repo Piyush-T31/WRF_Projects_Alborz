@@ -13,7 +13,7 @@ The objective is to understand the **mechanisms and local impacts** of foehn win
 - The processed terrain data was visualized using WRF output variables (e.g., `ter`).  
 - Below is an example of the topography from the innermost domain (`d03`), with the selected cross-section line marked for vertical analysis:
 
-![Topography and Cross Section](images/wrf_topo2.png)
+![Topography and Cross Section](wrf_terrain.png)
 
 ---
 
@@ -22,14 +22,22 @@ The simulations were conducted using **WRF v4.7.1**.
 
 #### Simulation Setup
 - **Domains:** 3 nested domains (`d01` → `d02` → `d03`)
-- **Resolution:** 9 km → 3 km → 1 km  
-- **Vertical levels:** 50  
+- **Input Data:** GFS Final Analysis data available every 6 hours
+- **Resolution:** 27 km → 9 km → 3 km  
+- **Vertical levels:** 51  
 - **Physics options:**
-  - Microphysics: WSM6 scheme  
-  - Cumulus parameterization: Kain–Fritsch (outer domains only)  
-  - Planetary Boundary Layer: YSU scheme  
+  - Microphysics: Thompson Microphysics scheme  
+  - Cumulus parameterization: Kain–Fritsch (turned off for `d03`)  
+  - Planetary Boundary Layer: MYNN 3.0 scheme  
+  - Surface Layer Scheme : MYNN surface layer scheme
   - Land Surface Model: Noah LSM  
   - Radiation: RRTMG shortwave and longwave schemes  
+
+## ⚙️ Tools and Environment
+- **WRF v4.7.1**
+- **NCL 6.6.2** – for diagnostics and plotting
+- **Python 3.11 (Matplotlib, Pandas, NumPy)** – for post-processing and plots
+- **VS Code + MobaXterm** – workflow environment
 
 #### Case Studies
 Four case studies were selected based on observed foehn events.  
@@ -39,27 +47,20 @@ The **first case** runs from **January 13th 2021, 12 UTC** to **January 16th 202
 
 ### 3. Diagnostics and Visualization
 - Vertical cross-sections of wind speed, temperature, and potential temperature were extracted using **NCL** (`wrf_user_vert_cross`).
-- Height profiles at specific locations (e.g., **Kermanshah**) were generated from model output using NCL and plotted in Python.
+- Height profiles at specific locations (e.g., **Kermanshah**, **Tehran** and **OIGG**) were generated from model output using either NCL or Python to plot.
 - Example outputs include:
   - Vertical cross-sections of wind and temperature along a transect.
   - Time series and vertical profiles of thermodynamic variables.
 
 ---
 
-## ⚙️ Tools and Environment
-- **WRF v4.7.1**
-- **NCL 6.6.2** – for diagnostics and plotting
-- **Python 3.11 (Matplotlib, Pandas, NumPy)** – for post-processing
-- **VS Code + WSL2** – workflow environment
-- **DEM Source:** SRTM 30m (resampled for model grid)
+## 📊 Example Output from first case study
 
----
-
-## 📊 Example Output
-
-![Vertical Cross Section](images/vert_cross_example.png)
-![Temperature Profile](images/vertical_profile_kerman.png)
-
+![Vertical Wind Cross Section (foehn)](First_casestudy/Wind_xsection/wind_xsection_024.png)
+![Vertical Wind Cross Section (no foehn)](First_casestudy/Wind_xsection/wind_xsection_061.png)
+![Wind speed Vertical Profile](First_casestudy/Vertical_plot/kerman16th_windvert.png)
+![Time plot of T2 and Td2](First_casestudy/timeplot_OIGG/temp2m.png)
+![Horizontal variation of RH2](First_casestudy/horizontal_rh2xsection/horizontal_rh2.000049.png)
 ---
 
 ## 🧩 Next Steps
@@ -71,12 +72,13 @@ The **first case** runs from **January 13th 2021, 12 UTC** to **January 16th 202
 
 ## 📁 Repository Structure
 ```
-├── data/ # Input and output data (excluded from Git)
+├── data/ # Input (GFS FNL) and output data from wrfout (excluded from Git)
 ├── scripts/ # NCL and Python analysis scripts
-│ ├── vert_cross.ncl
+│ ├── vert_cross2.ncl
 │ ├── wrf_topo2.ncl
-│ ├── profile_plot.py
-├── images/ # Figures and visualizations
+│ ├── alborz_timeplot.py   # and more scripts
+├── First_casestudy/ # Figures and visualizations for 14th Jan to 16th.
+├── Second_casestudy/ # Figures and visualizations for 16th Jan to 19th.
 └── namelist.input # WRF configuration file
  
 ```
