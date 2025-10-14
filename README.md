@@ -32,6 +32,8 @@ The simulations were conducted using **WRF v4.7.1**.
   - Surface Layer Scheme : MYNN surface layer scheme
   - Land Surface Model: Noah LSM  
   - Radiation: RRTMG shortwave and longwave schemes  
+![Domain Configuration](wps_show_dom.png)
+- Domain configuration using WPS
 
 ## ⚙️ Tools and Environment
 - **WRF v4.7.1**
