@@ -2,14 +2,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV and parse 'Time' as datetime
-df = pd.read_csv("kerman17th_profile.csv")
+df = pd.read_csv(
+    'C:\\Users\\Piyus\\OneDrive\\Desktop\\Alborz_project\\Third_casestudy\\kerman31th_profile.csv')
 
 # --- Plot Wind Speed profile ---
 plt.figure(figsize=(7, 8))
-plt.plot(df["WD(deg)"], df["Z(m)"], color="navy", linewidth=2)
+plt.plot(df["Td(C)"], df["Z(m)"], color="tomato", linewidth=2)
 
 # --- Labels and style ---
-plt.xlabel("Wind Direction (deg)")
+plt.xlabel("Dewpoint Temperature (C)")
 plt.ylabel("Log Scale for Height (m)")
 # plt.yscale("symlog", linthresh=5000)
 plt.yscale("log")
@@ -21,7 +22,7 @@ plt.yticks(tick_vals, [str(v) for v in tick_vals])
 
 # plt.ylim(1200, 10000)
 plt.title(
-    "Kermanshah on 17th 00Z\nVertical Profile of Wind Direction", fontsize=11)
+    "Kermanshah on 31st 00Z\nVertical Profile of Dewpoint Temperature", fontsize=11)
 plt.grid(True, which="both", linestyle="--", alpha=0.6)
 
 plt.show()

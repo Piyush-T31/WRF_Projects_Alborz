@@ -87,6 +87,7 @@ The **first case** runs from **January 13th 2021, 12 UTC** to **January 16th 202
 │ ├── alborz_timeplot.py   # and more scripts
 ├── First_casestudy/ # Figures and visualizations for 14th Jan to 16th.
 ├── Second_casestudy/ # Figures and visualizations for 16th Jan to 19th.
+├── Third_casestudy/ # Figures and visualizations for 28th Jan to 31st.
 └── namelist.input # WRF configuration file
  
 ```
